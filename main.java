@@ -7,11 +7,8 @@ public class main {
 	public static void main(String [] args) {
 		Locale.setDefault(Locale.US);
 		Scanner teclado = new Scanner(System.in);
-		Conexao conecta = new Conexao();
-		Adicionar add = new Adicionar();	
-		Remover remove = new Remover();
-		Editar edt = new Editar();
-		int opcao, equipamento, novoEquipamento;	    
+		TB_Equipamento tbequipamento = new TB_Equipamento();
+		Integer opcao, equipamento, novoEquipamento;	    
 		String descricao,novaDescricao;
 		
 		System.out.println("1- Adicionar na tabela de Equipamento");
@@ -19,25 +16,22 @@ public class main {
 		System.out.println("3- Editar na tabela de Equipamento");
 		System.out.println("Escolha uma das opções acima: ");
 		
-		opcao = teclado.nextInt();
-		if(opcao==1) {
-			System.out.println("Digite o número do Equipamento que será adicionado: ");
-			equipamento = teclado.nextInt();
+		opcao = Integer.parseInt(teclado.nextLine());
+		if(opcao==1) {			
 			System.out.println("Digite a descrição do Equipamento que será adicionado: ");
-			descricao = teclado.next();
-			add.AdicionarTB_Equipamento(equipamento, descricao);
+			descricao = teclado.nextLine();
+			
+			tbequipamento.Adicionar(descricao);
 		}else if(opcao==2) {
 			System.out.println("Digite o número do Equipamento que será removido: ");
-			equipamento = teclado.nextInt();
-			remove.RemoverTB_Equipamento(equipamento);
+			equipamento = Integer.parseInt(teclado.nextLine());
+			tbequipamento.Remover(equipamento);
 		}else if(opcao==3) {
 			System.out.println("Digite o número do equipamento que será editado: ");
-			equipamento = teclado.nextInt();
-			System.out.println("Digite o novo número do Equipamento: ");
-			novoEquipamento = teclado.nextInt();
+			equipamento = Integer.parseInt(teclado.nextLine());							
 			System.out.println("Digite a nova descrição do Equipamento: ");
-			novaDescricao = teclado.next();
-			edt.EditarTB_Equipamento(equipamento, novoEquipamento, novaDescricao);
+			novaDescricao = teclado.nextLine();
+			tbequipamento.Editar(equipamento, novaDescricao);
 		}		
 	
 	}

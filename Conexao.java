@@ -21,7 +21,7 @@ public class Conexao {
 	public void desconecta() {
 		try {
 			conn.close();
-			System.out.println("Desconectado com sucesso");
+			//System.out.println("Desconectado com sucesso");
 		}catch(SQLException ex) {
 			System.out.println("Erro na desconexão");
 		}
