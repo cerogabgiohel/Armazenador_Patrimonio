@@ -3,7 +3,7 @@ public class Conexao {
 	public Statement stm;
 	public ResultSet rs;
 	public String driver = "org.sqlite.JDBC";
-	private String caminho = "jdbc:sqlite:C:\\Users\\Cerogabgiohel\\Downloads\\SQLiteDatabaseBrowserPortable\\Data\\Patrimonios.db";
+	private String caminho = "jdbc:sqlite:C:\\Users\\Cerogabgiohel\\Desktop\\TRE-MG\\PatControl-Ver20.db";
 	public Connection conn;
 	
 	public Connection conecta() {
