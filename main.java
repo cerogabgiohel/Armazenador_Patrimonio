@@ -27,7 +27,8 @@ public class main {
 		System.out.println("11- Remover da tabela de Localização");
 		System.out.println("12- Editar na tabela de Localização");
 		System.out.println("13- Adicionar à tabela de Movimentação");
-	
+		System.out.println("14- Remover da tabela de Movimentação ");
+		System.out.println("15- Editar na tabela de Movimentação");
 		System.out.println("Escolha uma das opções acima: ");
 		
 		opcao = Integer.parseInt(teclado.nextLine());
@@ -61,7 +62,9 @@ public class main {
 			novaDescricao = teclado.nextLine();
 			tblocal.Editar(local, novaDescricao);	
 		}else if(opcao==7) {
-			System.out.println("Digite o número do equipamento que será adicionado à tabela de Patrimônio: ");
+			System.out.println("Digite o número do patrimônio que será adicionado à tabela de Patrimônio");
+			patrimonio = Integer.parseInt(teclado.nextLine());
+			System.out.println("Digite o número do equipamento: ");
 			equipamento = Integer.parseInt(teclado.nextLine());
 			System.out.println("Digite o nome da fabricante: ");
 			fabricante = teclado.nextLine();
@@ -71,7 +74,7 @@ public class main {
 			descricao = teclado.nextLine();
 			System.out.println("Digite a condição de uso");
 			condicaoUso = Integer.parseInt(teclado.nextLine());
-			tbpatrimonio.Adicionar(equipamento, fabricante, marca, descricao, condicaoUso);
+			tbpatrimonio.Adicionar(patrimonio, equipamento, fabricante, marca, descricao, condicaoUso);
 		}else if(opcao==8) {
 			System.out.println("Digite o número do patrimônio que será removido da tabela de Patrimônio: ");
 			patrimonio = Integer.parseInt(teclado.nextLine());
@@ -124,6 +127,22 @@ public class main {
 			System.out.println("Digite a data de devolução: ");
 			dataDevolucao = teclado.nextLine();
 			tbmovimentacao.Adicionar(patrimonio, dataEntrada, numeroGuia, dataDevolucao);			
+		}else if(opcao==14) {
+			System.out.println("Digite o Número da Guia que será removido da tabela de Movimentação: ");
+			numeroGuia = Integer.parseInt(teclado.nextLine());
+			tbmovimentacao.Remover(numeroGuia);
+		}else if(opcao==15) {
+			System.out.println("Digite o patrimônio que será editado na tabela de Movimentação: ");
+			patrimonio = Integer.parseInt(teclado.nextLine());
+			System.out.println("Digite o novo patrimônio: ");
+			novoPatrimonio = Integer.parseInt(teclado.nextLine());
+			System.out.println("Digite a nova data de entrada: ");
+			dataEntrada = teclado.nextLine();
+			System.out.println("Digite o novo número da guia: ");
+			numeroGuia = Integer.parseInt(teclado.nextLine());
+			System.out.println("Digite a nova data de devolução: ");
+			dataDevolucao = teclado.nextLine();
+			tbmovimentacao.Editar(patrimonio, novoPatrimonio, dataEntrada, numeroGuia, dataDevolucao);
 		}else {
 			System.out.println("Opção inválida");
 		}

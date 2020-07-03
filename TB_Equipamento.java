@@ -17,7 +17,7 @@ public class TB_Equipamento {
 			pst = conn.prepareStatement(sql);			
 			pst.setString(1, descricao);
 			pst.executeUpdate();
-			System.out.println("O equipamento e a descrição foram adicionados com sucesso");
+			System.out.println("O equipamento e a descrição foram adicionados com sucesso à tabela de equipamento");
 			conecta.desconecta();
 			}catch(SQLException ex) {
 				System.out.println("Erro ao adicionar. Erro: " +ex);

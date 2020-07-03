@@ -28,6 +28,9 @@ public class TB_Localizacao {
             
             if(!rs.next()) {
             	System.out.println("O patrimônio digitado não foi adicionado à tabela de patrimônio");	
+            	if(!rs1.next()) {
+            		System.out.println("e o local digitado também não foi adicionado à tabela de patrimônio");	
+            	}
             } else if(!rs1.next()) {
             	System.out.println("O local digitado não foi adicionado à tabela de patrimônio");	
             }else {
@@ -37,7 +40,7 @@ public class TB_Localizacao {
 			pst.setInt(2,  local);
 			pst.setString(3, data);
 			pst.executeUpdate();
-			System.out.println("O equipamento e a descrição foram adicionados com sucesso");
+			System.out.println("O patrimônio e o local foram adicionados com sucesso à tabela de Localização");
 			conecta.desconecta();
             }catch(SQLException ex) {
 				System.out.println("Erro ao adicionar. Erro: " +ex);
